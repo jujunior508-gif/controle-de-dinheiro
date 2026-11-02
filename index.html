@@ -14,7 +14,7 @@
      ===================================================================== -->
 <script>
   window.LP_CONFIG = {
-    checkout:  "[LINK DO CHECKOUT KIWIFY]",        // ex.: https://pay.kiwify.com.br/xxxxxxx
+    checkout:  "https://pay.kiwify.com.br/TySU2VG",
     preco:     "[PREÇO]",                          // ex.: R$ 47,00
     parcelas:  "[X]",                              // ex.: 6
     politica:  "[LINK DA POLÍTICA DE PRIVACIDADE]",
@@ -568,7 +568,7 @@ a { color: inherit; }
           <h1 id="hero-title">Você fatura bem em um mês e passa aperto no outro? <span class="turn">O problema não é o dinheiro. É a falta de sistema.</span></h1>
           <p class="hero-sub">O método em 7 passos para autônomos separarem as contas, se pagarem um salário fixo e dormirem tranquilos, mesmo com renda variável.</p>
           <div class="cta-block">
-            <a class="btn" data-checkout href="[LINK DO CHECKOUT KIWIFY]">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <p class="btn-note">Ebook em PDF • Acesso após a confirmação do pagamento • Garantia de 7 dias</p>
           </div>
         </div>
@@ -625,7 +625,7 @@ a { color: inherit; }
         <h2 id="solucao-title">Apresentando o <em>Dinheiro no Controle</em></h2>
         <p>Um guia prático e direto que transforma sua renda variável em um sistema simples, com salário fixo, impostos separados e reserva para os meses difíceis. Sem planilhas complicadas e sem precisar entender de economia.</p>
         <div class="cta-block">
-          <a class="btn" data-checkout href="[LINK DO CHECKOUT KIWIFY]">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
       <ul class="pillars" aria-label="O que o sistema traz para sua rotina">
@@ -710,7 +710,7 @@ a { color: inherit; }
       </figure>
 
       <div class="cta-block cta-block--center flow-cta">
-        <a class="btn" data-checkout href="[LINK DO CHECKOUT KIWIFY]">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </section>
@@ -778,7 +778,7 @@ a { color: inherit; }
           <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-calcheck"/></svg></span><span>Plano de ação de 30 dias incluso</span></li>
         </ul>
         <div class="cta-block">
-          <a class="btn" data-checkout href="[LINK DO CHECKOUT KIWIFY]">QUERO COMEÇAR AGORA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO COMEÇAR AGORA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
@@ -810,7 +810,7 @@ a { color: inherit; }
         <div class="offer-price">
           <p class="price"><strong data-config="preco">[PREÇO]</strong> <span>à vista ou em até <span data-config="parcelas">[X]</span>x no cartão.</span></p>
           <p class="pix"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Aceita Pix.</p>
-          <a class="btn btn--xl" data-checkout href="[LINK DO CHECKOUT KIWIFY]">QUERO COMEÇAR AGORA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--xl" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO COMEÇAR AGORA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <p class="offer-fine"><span><svg class="icon" aria-hidden="true" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px"><use href="#i-lock"/></svg>Pagamento processado pela Kiwify</span><span>Produto digital</span><span>Garantia de 7 dias</span></p>
         </div>
       </div>
@@ -881,7 +881,7 @@ a { color: inherit; }
       <div class="final-inner">
         <span class="boxes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
         <h2 id="final-title">Daqui a 30 dias, você pode continuar no aperto ou <em>ter seu dinheiro no controle.</em></h2>
-        <a class="btn btn--gold btn--xl" data-checkout href="[LINK DO CHECKOUT KIWIFY]">SIM, QUERO MEU DINHEIRO NO CONTROLE <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--gold btn--xl" data-checkout href="https://pay.kiwify.com.br/TySU2VG">SIM, QUERO MEU DINHEIRO NO CONTROLE <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
   </section>
@@ -918,10 +918,11 @@ a { color: inherit; }
   document.querySelectorAll("[data-checkout]").forEach(function (a) {
     a.setAttribute("href", cfg.checkout);
   });
-  // Links jurídicos
+  // Links jurídicos (ficam ocultos até receberem um link real)
   document.querySelectorAll("[data-config-href]").forEach(function (a) {
     var v = cfg[a.getAttribute("data-config-href")];
-    if (v) a.setAttribute("href", v);
+    if (isPlaceholder(v)) a.closest("li").hidden = true;
+    else a.setAttribute("href", v);
   });
   // Preço e parcelas
   document.querySelectorAll("[data-config]").forEach(function (el) {
@@ -929,7 +930,7 @@ a { color: inherit; }
     if (v) el.textContent = v;
   });
   // Aviso discreto enquanto houver campos sem preencher
-  var pending = ["checkout", "preco", "parcelas", "politica", "termos"].some(function (k) { return isPlaceholder(cfg[k]); });
+  var pending = ["checkout", "preco", "parcelas"].some(function (k) { return isPlaceholder(cfg[k]); });
   if (pending) document.getElementById("config-note").hidden = false;
 
   // FAQ em acordeão
