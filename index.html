@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dinheiro no Controle</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Dinheiro no Controle: Kit de Organização Financeira para Autônomos. O método em 7 passos para separar as contas, se pagar um salário fixo e organizar a renda variável.">
+
+<!-- =====================================================================
+     CONFIGURAÇÃO — edite APENAS estes valores antes de publicar.
+     Todos os botões de compra, o preço e os links jurídicos da página
+     são preenchidos a partir daqui.
+     ===================================================================== -->
+<script>
+  window.LP_CONFIG = {
+    checkout:  "https://pay.kiwify.com.br/TySU2VG",
+    preco:     "[PREÇO]",                          // ex.: R$ 47,00
+    parcelas:  "[X]",                              // ex.: 6
+    politica:  "[LINK DA POLÍTICA DE PRIVACIDADE]",
+    termos:    "[LINK DOS TERMOS DE USO]"
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700;800&display=swap">
+
+<style>
+/* Layout: coluna central de 1140px; faixas alternadas branco / verde-névoa; o verde-escuro aparece só nos momentos de virada (dor, oferta final). */
+:root {
+  color-scheme: light;
+  --green-950: #062A20;
+  --green-900: #0A3A2C;
+  --green-800: #0E4A38;
+  --green-700: #145E48;
+  --green-200: #CFE6DA;
+  --green-100: #E7F2EC;
+  --mist:      #F4F8F5;
+  --white:     #FFFFFF;
+  --ink:       #11241D;
+  --ink-soft:  #44574F;
+  --line:      #DCE7E1;
+  --gold:      #C9A24A;
+  --gold-soft: #F3E6C4;
+  --gold-cta:  #F2C35B;
+  --no:        #9B4434;
+  --no-soft:   #F8ECE8;
+
+  --f-display: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --f-body: "Figtree", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: clamp(1.45rem, 1.2rem + 1vw, 1.75rem);
+  --step-3: clamp(1.8rem, 1.35rem + 1.9vw, 2.6rem);
+  --step-4: clamp(2rem, 1.4rem + 2.6vw, 3.3rem);
+
+  --radius: 18px;
+  --shadow: 0 1px 2px rgba(6, 42, 32, .06), 0 12px 32px -12px rgba(6, 42, 32, .18);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img, svg { max-width: 100%; }
+[hidden] { display: none !important; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; line-height: 1.15; margin: 0; text-wrap: balance; letter-spacing: -0.01em; color: var(--green-950); }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+
+.skip { position: absolute; left: 16px; top: -100px; background: var(--green-900); color: var(--white); padding: 10px 16px; border-radius: 8px; z-index: 50; text-decoration: none; font-weight: 600; }
+.skip:focus { top: calc(12px + env(safe-area-inset-top, 0px)); }
+
+.wrap {
+  width: 100%;
+  max-width: 1172px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 640px) { .wrap { padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); } }
+
+.section { padding-block: clamp(64px, 9vw, 112px); }
+.section--mist { background: var(--mist); }
+.section--dark { background: var(--green-900); color: #E8F1EC; }
+.section--dark h2 { color: var(--white); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: var(--step--1); font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--green-700);
+}
+.eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--gold); border-radius: 2px; }
+
+.section-head { display: grid; gap: 14px; max-width: 46rem; margin-bottom: clamp(32px, 5vw, 52px); }
+.section-head h2 { font-size: var(--step-3); }
+.section-head p { color: var(--ink-soft); font-size: var(--step-1); line-height: 1.55; }
+.section-head--center { margin-inline: auto; text-align: center; justify-items: center; }
+
+.icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.icon-tile {
+  width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; flex: none;
+  background: var(--green-100); color: var(--green-800);
+}
+
+/* ---------- Botões ---------- */
+.cta-block { display: grid; gap: 12px; justify-items: start; }
+.cta-block--center { justify-items: center; text-align: center; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 60px; padding: 16px 28px;
+  border-radius: 14px; border: 0;
+  font-family: var(--f-body); font-size: 1.0625rem; font-weight: 800; letter-spacing: .02em; line-height: 1.25;
+  text-align: center; text-decoration: none; cursor: pointer;
+  background: var(--green-800); color: var(--white);
+  box-shadow: 0 1px 0 rgba(255,255,255,.12) inset, 0 10px 24px -10px rgba(14, 74, 56, .65);
+  transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+.btn:hover { background: var(--green-700); transform: translateY(-2px); box-shadow: 0 1px 0 rgba(255,255,255,.12) inset, 0 16px 30px -12px rgba(14, 74, 56, .7); }
+.btn:active { transform: translateY(0); }
+.btn .icon { width: 20px; height: 20px; stroke-width: 2.4; transition: transform .18s ease; }
+.btn:hover .icon { transform: translateX(3px); }
+.btn--gold { background: var(--gold-cta); color: var(--green-950); box-shadow: 0 10px 28px -12px rgba(242, 195, 91, .7); }
+.btn--gold:hover { background: #F6D07A; box-shadow: 0 16px 34px -12px rgba(242, 195, 91, .8); }
+.btn--xl { min-height: 68px; font-size: 1.125rem; padding-inline: 34px; }
+@media (max-width: 559px) { .btn { width: 100%; padding-inline: 20px; } }
+.btn-note { font-size: var(--step--1); color: var(--ink-soft); }
+
+/* ---------- Aviso de configuração ---------- */
+.config-note { background: var(--gold-soft); color: var(--green-950); font-size: var(--step--1); text-align: center; padding-block: 8px; }
+.config-note code { font-weight: 700; }
+
+/* ---------- 1. Hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  padding-block: clamp(28px, 4vw, 40px) clamp(64px, 8vw, 104px);
+  background:
+    radial-gradient(60rem 36rem at 92% 8%, rgba(207, 230, 218, .75), transparent 60%),
+    radial-gradient(30rem 20rem at 0% 100%, rgba(243, 230, 196, .45), transparent 70%),
+    var(--white);
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--f-display); font-weight: 600; font-size: 1.125rem; color: var(--green-900); text-decoration: none; }
+.brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--green-900); display: grid; grid-template-columns: repeat(2, 7px); gap: 3px; place-content: center; }
+.brand-mark span { width: 7px; height: 7px; border-radius: 2px; background: var(--gold); }
+.brand-mark span:nth-child(4) { background: #E8D8AE; }
+.hero-grid { display: grid; gap: clamp(40px, 6vw, 64px); align-items: center; margin-top: clamp(36px, 6vw, 72px); }
+@media (min-width: 900px) { .hero-grid { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); } }
+.hero-copy { display: grid; gap: 22px; min-width: 0; }
+.pill {
+  justify-self: start;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px; border-radius: 999px;
+  background: var(--white); border: 1px solid var(--line);
+  font-size: var(--step--1); font-weight: 600; color: var(--green-800);
+}
+.pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+.hero h1 { font-size: var(--step-4); line-height: 1.1; }
+.hero h1 .turn { display: block; margin-top: .35em; color: var(--green-700); font-style: italic; font-weight: 500; }
+.hero-sub { font-size: var(--step-1); color: var(--ink-soft); max-width: 36rem; line-height: 1.55; }
+.hero .cta-block { margin-top: 6px; }
+
+/* ---------- Mockup 3D do ebook ---------- */
+.mockup { display: grid; justify-items: center; gap: 22px; min-width: 0; }
+.book-stage { perspective: 1800px; padding: 12px 24px 28px; max-width: 100%; }
+.book {
+  position: relative;
+  width: min(300px, 64vw);
+  aspect-ratio: 5 / 7;
+  transform-style: preserve-3d;
+  transform: rotateY(-26deg) rotateX(6deg) rotateZ(-1deg);
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+  animation: float 7s ease-in-out infinite;
+}
+.book-stage:hover .book { transform: rotateY(-14deg) rotateX(4deg); }
+@keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+.book-face {
+  position: absolute; inset: 0;
+  border-radius: 4px 10px 10px 4px;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 85% 0%, rgba(201,162,74,.22), transparent 55%),
+    linear-gradient(160deg, #11533F 0%, var(--green-900) 48%, var(--green-950) 100%);
+  box-shadow: inset 4px 0 0 rgba(0,0,0,.25), inset 10px 0 18px -10px rgba(0,0,0,.5);
+  transform: translateZ(9px);
+  color: #F5EEDC;
+  display: grid; grid-template-rows: auto 1fr auto;
+  padding: 11% 11% 10% 14%;
+}
+.book-face::before {
+  content: ""; position: absolute; inset: 5.5% 6% 5.5% 9%;
+  border: 1px solid rgba(201,162,74,.55); border-radius: 3px; pointer-events: none;
+}
+.book-face::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 32%, rgba(255,255,255,0) 70%, rgba(255,255,255,.06) 100%);
+  pointer-events: none;
+}
+.cover-top { display: flex; justify-content: space-between; align-items: center; font-size: clamp(.5rem, 1.6vw, .66rem); font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.cover-boxes { display: flex; gap: 3px; }
+.cover-boxes i { width: 7px; height: 7px; border: 1px solid var(--gold); border-radius: 2px; }
+.cover-boxes i:first-child { background: var(--gold); }
+.cover-title { align-self: center; display: grid; gap: 12px; }
+.cover-title strong { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.55rem, 6.4vw, 2.35rem); line-height: 1.02; letter-spacing: -0.015em; color: #FBF6E9; }
+.cover-title strong em { font-style: italic; font-weight: 500; color: #E7C977; }
+.cover-rule { width: 38px; height: 2px; background: var(--gold); }
+.cover-title span { font-size: clamp(.68rem, 2.1vw, .84rem); line-height: 1.4; color: #D9E6DE; max-width: 15em; }
+.cover-foot { font-size: clamp(.5rem, 1.6vw, .64rem); letter-spacing: .16em; text-transform: uppercase; color: rgba(245,238,220,.7); }
+.book-pages {
+  position: absolute; top: 1.2%; bottom: 1.2%; right: 0; width: 18px;
+  transform-origin: right center;
+  transform: translateX(9px) rotateY(90deg) translateX(9px);
+  background: repeating-linear-gradient(90deg, #F7F4EC 0 1px, #E4DFD2 1px 2px);
+  border-radius: 0 2px 2px 0;
+}
+.book-back {
+  position: absolute; inset: 0; border-radius: 4px 10px 10px 4px;
+  background: var(--green-950);
+  transform: translateZ(-9px);
+}
+.book-shadow {
+  position: absolute; left: 6%; right: -4%; bottom: -26px; height: 30px;
+  background: radial-gradient(closest-side, rgba(6,42,32,.32), transparent);
+  filter: blur(4px); transform: translateZ(-30px) rotateX(90deg);
+}
+.digital-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: 12px;
+  background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow);
+  font-size: var(--step--1); color: var(--ink-soft); text-align: left; max-width: 100%;
+}
+.digital-tag strong { color: var(--green-900); }
+.digital-tag .badge { flex: none; font-size: .72rem; font-weight: 800; letter-spacing: .06em; color: var(--green-950); background: var(--gold-soft); border-radius: 6px; padding: 4px 7px; }
+
+/* ---------- 2. Dor ---------- */
+.pain-grid { display: grid; gap: 14px; }
+@media (min-width: 720px) { .pain-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
+.pain-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px; border-radius: var(--radius);
+  background: var(--white); border: 1px solid var(--line);
+}
+.pain-item p { min-width: 0; padding-top: 11px; line-height: 1.5; }
+.pain-close {
+  margin-top: clamp(32px, 5vw, 48px);
+  padding: clamp(28px, 5vw, 48px);
+  border-radius: calc(var(--radius) + 6px);
+  background: var(--green-900); color: #E6EFEA;
+  display: grid; gap: 10px; text-align: center; justify-items: center;
+}
+.pain-close p { font-family: var(--f-display); font-size: var(--step-2); line-height: 1.35; max-width: 34em; text-wrap: balance; }
+.pain-close strong { color: #EBCB7C; font-weight: 600; }
+
+/* ---------- 3. Solução ---------- */
+.solution { display: grid; gap: clamp(36px, 5vw, 64px); align-items: center; }
+@media (min-width: 900px) { .solution { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); } }
+.solution-copy { display: grid; gap: 22px; min-width: 0; }
+.solution-copy h2 { font-size: var(--step-3); }
+.solution-copy h2 em { font-style: italic; color: var(--green-700); font-weight: 500; }
+.solution-copy > p { font-size: var(--step-1); color: var(--ink-soft); line-height: 1.6; max-width: 36rem; }
+.pillars { display: grid; gap: 14px; }
+.pillar { display: flex; gap: 16px; align-items: flex-start; padding: 22px; border-radius: var(--radius); background: var(--mist); }
+.pillar div { min-width: 0; display: grid; gap: 4px; }
+.pillar h3 { font-family: var(--f-body); font-size: 1.0625rem; font-weight: 700; color: var(--green-900); letter-spacing: 0; }
+.pillar p { color: var(--ink-soft); font-size: .98rem; line-height: 1.5; }
+
+/* ---------- 4. Passos ---------- */
+.steps { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .step:last-child { grid-column: 1 / -1; }
+}
+@media (min-width: 1000px) {
+  .steps { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .step { grid-column: span 3; }
+  .step:nth-child(n+5) { grid-column: span 4; }
+  .step:last-child { grid-column: span 4; }
+}
+.step {
+  position: relative; display: grid; gap: 14px; align-content: start;
+  padding: 26px 24px 28px; border-radius: var(--radius);
+  background: var(--white); border: 1px solid var(--line);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.step:hover { border-color: var(--green-200); box-shadow: var(--shadow); transform: translateY(-2px); }
+.step-top { display: flex; justify-content: space-between; align-items: center; }
+.step-num { font-family: var(--f-display); font-size: 2.4rem; line-height: 1; font-weight: 500; color: var(--gold); font-variant-numeric: lining-nums; }
+.step-num small { font-family: var(--f-body); font-size: .72rem; font-weight: 700; letter-spacing: .12em; color: var(--ink-soft); margin-right: 4px; text-transform: uppercase; vertical-align: middle; }
+.step h3 { font-family: var(--f-body); font-size: 1.125rem; font-weight: 700; line-height: 1.35; color: var(--green-950); letter-spacing: 0; }
+.step p { color: var(--ink-soft); font-size: .98rem; line-height: 1.55; }
+.extras {
+  margin-top: 20px;
+  display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center;
+  padding: 22px 26px; border-radius: var(--radius);
+  background: var(--gold-soft); color: var(--green-950);
+}
+.extras-label { font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; background: var(--green-900); color: var(--gold-soft); padding: 6px 12px; border-radius: 999px; }
+.extras p { flex: 1 1 18rem; min-width: 0; font-weight: 600; font-size: 1.0625rem; }
+
+/* ---------- 5. Caixinhas ---------- */
+.flow { display: grid; justify-items: center; }
+.flow-origin {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 18px 26px; border-radius: 16px;
+  background: var(--green-900); color: var(--white);
+  font-weight: 700; font-size: 1.125rem; box-shadow: var(--shadow);
+  position: relative; z-index: 1;
+}
+.flow-origin .icon { color: var(--gold-cta); width: 28px; height: 28px; }
+.flow-stem { width: 2px; height: 36px; background: var(--green-200); }
+.flow-boxes { width: 100%; display: grid; gap: 14px; position: relative; }
+.flow-box {
+  position: relative;
+  display: grid; gap: 10px; align-content: start;
+  padding: 22px 20px; border-radius: var(--radius);
+  background: var(--white); border: 1px solid var(--line);
+}
+.flow-box h3 { font-family: var(--f-body); font-size: 1.0625rem; font-weight: 700; color: var(--green-950); letter-spacing: 0; line-height: 1.3; }
+.flow-box p { color: var(--ink-soft); font-size: .96rem; line-height: 1.5; }
+.flow-box .icon-tile { background: var(--gold-soft); color: var(--green-900); }
+
+/* Celular: tronco vertical à esquerda, cada caixinha ligada por um ramo */
+@media (max-width: 899px) {
+  .flow-stem { height: 28px; }
+  .flow-boxes { padding-left: 28px; }
+  .flow-boxes::before { content: ""; position: absolute; left: 0; top: -2px; bottom: 44px; width: 2px; background: var(--green-200); }
+  .flow { justify-items: start; }
+  .flow-origin { margin-left: -2px; }
+  .flow-stem { margin-left: 0; }
+  .flow-box { grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; align-items: start; }
+  .flow-box .icon-tile { grid-row: span 2; }
+  .flow-box::before { content: ""; position: absolute; left: -28px; top: 44px; width: 28px; height: 2px; background: var(--green-200); }
+}
+/* Desktop: barra horizontal ligando as cinco caixinhas */
+@media (min-width: 900px) {
+  .flow-boxes { grid-template-columns: repeat(5, minmax(0, 1fr)); padding-top: 34px; }
+  .flow-boxes::before { content: ""; position: absolute; top: 0; left: 10%; right: 10%; height: 2px; background: var(--green-200); }
+  .flow-box::before { content: ""; position: absolute; top: -34px; left: 50%; width: 2px; height: 34px; background: var(--green-200); }
+  .flow-box::after { content: ""; position: absolute; top: -5px; left: calc(50% - 4px); width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+  .flow-box { text-align: center; justify-items: center; }
+}
+.flow-note {
+  margin: clamp(28px, 4vw, 40px) auto 0; max-width: 44rem;
+  text-align: center; color: var(--ink-soft);
+}
+.flow-cta { margin-top: 32px; }
+
+/* ---------- 6. Para quem ---------- */
+.fit { display: grid; gap: 18px; }
+@media (min-width: 800px) { .fit { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 22px; } }
+.fit-card { padding: clamp(26px, 4vw, 38px); border-radius: calc(var(--radius) + 4px); display: grid; gap: 22px; align-content: start; }
+.fit-card h3 { font-size: var(--step-2); }
+.fit-card ul { display: grid; gap: 14px; }
+.fit-card li { display: flex; gap: 14px; align-items: flex-start; font-size: 1.0625rem; font-weight: 500; }
+.fit-card li span { min-width: 0; padding-top: 3px; }
+.fit-mark { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.fit-mark .icon { width: 18px; height: 18px; stroke-width: 2.6; }
+.fit-yes { background: var(--green-100); border: 1px solid var(--green-200); }
+.fit-yes .fit-mark { background: var(--green-800); color: var(--white); }
+.fit-no { background: var(--white); border: 1px solid var(--line); }
+.fit-no h3 { color: var(--ink); }
+.fit-no .fit-mark { background: var(--no-soft); color: var(--no); }
+.fit-no li { color: var(--ink-soft); }
+
+/* ---------- 7. O que você recebe ---------- */
+.receive { display: grid; gap: clamp(40px, 6vw, 72px); align-items: center; }
+@media (min-width: 900px) { .receive { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.devices { position: relative; display: grid; place-items: center; padding: 16px 8px 40px; min-width: 0; }
+.tablet {
+  width: min(380px, 82vw); aspect-ratio: 3 / 4;
+  border-radius: 26px; padding: 14px;
+  background: #1A2421;
+  box-shadow: 0 30px 60px -28px rgba(6,42,32,.55), inset 0 0 0 2px #2C3A35;
+}
+.screen {
+  height: 100%; border-radius: 14px; overflow: hidden;
+  background: var(--white);
+  display: grid; grid-template-rows: auto 1fr;
+}
+.screen-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 12px; background: #F1F4F2; border-bottom: 1px solid var(--line); font-size: .7rem; color: var(--ink-soft); }
+.screen-bar b { font-weight: 700; color: var(--green-900); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.screen-page { display: grid; place-items: center; padding: 8% 14%; background: #E9EEEB; }
+.mini-cover {
+  width: 100%; aspect-ratio: 5 / 7; border-radius: 3px;
+  background: linear-gradient(160deg, #11533F, var(--green-950));
+  box-shadow: 0 10px 24px -10px rgba(0,0,0,.4);
+  position: relative; display: grid; align-content: center; gap: 8px; padding: 14%;
+  color: #FBF6E9;
+}
+.mini-cover::before { content: ""; position: absolute; inset: 6%; border: 1px solid rgba(201,162,74,.55); border-radius: 2px; }
+.mini-cover strong { font-family: var(--f-display); font-size: clamp(1.1rem, 4.6vw, 1.6rem); line-height: 1.05; font-weight: 600; }
+.mini-cover strong em { color: #E7C977; font-weight: 500; }
+.mini-cover span { font-size: clamp(.55rem, 1.8vw, .7rem); color: #D9E6DE; line-height: 1.35; }
+.phone {
+  position: absolute; right: max(4px, calc(50% - min(380px, 82vw) / 2 - 36px)); bottom: 8px;
+  width: min(128px, 28vw); aspect-ratio: 9 / 19;
+  border-radius: 20px; padding: 6px; background: #1A2421;
+  box-shadow: 0 20px 40px -18px rgba(6,42,32,.6), inset 0 0 0 2px #2C3A35;
+}
+.phone .screen { border-radius: 15px; }
+.phone .screen-page { padding: 18% 12%; }
+.phone .mini-cover strong { font-size: clamp(.62rem, 2.4vw, .82rem); }
+.phone .mini-cover span { display: none; }
+.receive-copy { display: grid; gap: 26px; min-width: 0; }
+.receive-copy h2 { font-size: var(--step-3); }
+.receive-list { display: grid; gap: 12px; }
+.receive-list li { display: flex; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 14px; background: var(--white); border: 1px solid var(--line); font-weight: 600; }
+.receive-list li span { min-width: 0; }
+.receive-list .icon-tile { width: 40px; height: 40px; border-radius: 11px; }
+.receive-list .icon { width: 20px; height: 20px; }
+
+/* ---------- 8. Oferta ---------- */
+.offer {
+  max-width: 760px; margin-inline: auto;
+  border-radius: 28px; overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 4px rgba(6,42,32,.04), 0 40px 80px -40px rgba(6,42,32,.35);
+}
+.offer-top { padding: clamp(28px, 5vw, 48px) clamp(22px, 5vw, 56px) 0; display: grid; gap: 16px; text-align: center; justify-items: center; }
+.offer-top h2 { font-size: var(--step-3); }
+.offer-top p { color: var(--ink-soft); font-size: 1.0625rem; max-width: 36rem; }
+.offer-cost { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.offer-cost li { font-size: .9rem; font-weight: 600; padding: 7px 12px; border-radius: 999px; background: var(--no-soft); color: var(--no); }
+.offer-product { margin: 26px clamp(16px, 4vw, 40px) 0; padding: 18px; border-radius: 18px; background: var(--mist); display: flex; gap: 16px; align-items: center; }
+.offer-product .mini-cover { width: 64px; flex: none; padding: 8px; gap: 3px; }
+.offer-product .mini-cover strong { font-size: .62rem; }
+.offer-product .mini-cover span { display: none; }
+.offer-product div:last-child { min-width: 0; display: grid; gap: 2px; }
+.offer-product b { font-family: var(--f-display); font-weight: 600; font-size: 1.15rem; color: var(--green-950); }
+.offer-product small { color: var(--ink-soft); font-size: .92rem; line-height: 1.45; }
+.offer-price { padding: 28px clamp(20px, 5vw, 56px) clamp(28px, 5vw, 44px); display: grid; gap: 18px; justify-items: center; text-align: center; }
+.price { display: grid; gap: 6px; justify-items: center; }
+.price strong { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.6rem, 2rem + 3vw, 3.8rem); line-height: 1; color: var(--green-900); font-variant-numeric: lining-nums tabular-nums; overflow-wrap: anywhere; }
+.price span { font-size: 1.125rem; color: var(--ink); font-weight: 500; }
+.pix { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: var(--green-800); font-size: .98rem; }
+.pix .icon { width: 18px; height: 18px; }
+.offer-fine { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 10px; font-size: var(--step--1); color: var(--ink-soft); }
+.offer-fine span + span::before { content: "•"; margin-right: 10px; color: var(--gold); }
+.offer .btn { width: 100%; max-width: 520px; }
+
+/* ---------- 9. Garantia ---------- */
+.guarantee { display: grid; gap: 32px; align-items: center; justify-items: center; text-align: center; max-width: 920px; margin-inline: auto; }
+@media (min-width: 760px) { .guarantee { grid-template-columns: auto minmax(0, 1fr); text-align: left; justify-items: start; gap: 48px; } }
+.seal { width: clamp(150px, 30vw, 190px); height: auto; flex: none; }
+.guarantee-copy { display: grid; gap: 14px; min-width: 0; }
+.guarantee-copy h2 { font-size: var(--step-3); }
+.guarantee-copy p { font-size: var(--step-1); color: var(--ink-soft); line-height: 1.6; }
+
+/* ---------- 10. FAQ ---------- */
+.faq { max-width: 820px; margin-inline: auto; display: grid; gap: 12px; }
+.faq-item { border-radius: 16px; background: var(--white); border: 1px solid var(--line); transition: border-color .2s ease; }
+.faq-item.is-open { border-color: var(--green-200); }
+.faq-item h3 { margin: 0; font-family: var(--f-body); letter-spacing: 0; }
+.faq-q {
+  width: 100%; min-height: 64px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 22px; border: 0; background: transparent; cursor: pointer; text-align: left;
+  font-family: var(--f-body); font-size: 1.0625rem; font-weight: 700; color: var(--green-950); line-height: 1.4;
+  border-radius: 16px;
+}
+.faq-q span { min-width: 0; }
+.faq-q .chev { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--green-100); color: var(--green-800); flex: none; transition: transform .25s ease, background-color .2s ease; }
+.faq-q .chev .icon { width: 18px; height: 18px; stroke-width: 2.4; }
+.faq-q[aria-expanded="true"] .chev { transform: rotate(180deg); background: var(--green-800); color: var(--white); }
+.faq-a { padding: 0 22px 20px; color: var(--ink-soft); font-size: 1.0625rem; }
+
+/* ---------- 11. Chamada final ---------- */
+.final {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(50rem 30rem at 50% 120%, rgba(201,162,74,.22), transparent 60%),
+    radial-gradient(40rem 24rem at 100% 0%, rgba(20,94,72,.6), transparent 60%),
+    var(--green-900);
+  color: #E3EEE8;
+  text-align: center;
+}
+.final-inner { display: grid; gap: 30px; justify-items: center; max-width: 52rem; margin-inline: auto; }
+.final h2 { font-size: var(--step-4); color: var(--white); line-height: 1.12; }
+.final h2 em { font-style: italic; font-weight: 500; color: #EBCB7C; }
+.final .boxes { display: flex; gap: 8px; }
+.final .boxes i { width: 12px; height: 12px; border-radius: 3px; border: 1.5px solid var(--gold); }
+.final .boxes i:nth-child(-n+5) { background: rgba(201,162,74,.35); }
+
+/* ---------- 12. Rodapé ---------- */
+.footer { background: var(--green-950); color: #B9CCC3; padding-block: 40px calc(40px + env(safe-area-inset-bottom, 0px)); font-size: var(--step--1); }
+.footer-inner { display: grid; gap: 18px; }
+@media (min-width: 760px) { .footer-inner { grid-template-columns: minmax(0, 1fr) auto; align-items: center; } }
+.footer .brand { color: #F0F5F2; }
+.footer p { max-width: 40rem; line-height: 1.55; margin-top: 10px; }
+.footer nav ul { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.footer nav a { color: #D4E2DB; text-underline-offset: 3px; text-decoration-color: rgba(212,226,219,.4); }
+.footer nav a:hover { color: var(--white); text-decoration-color: currentColor; }
+.footer-copy { margin-top: 26px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.1); color: #8FA89C; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Ícones (sprite inline, traço único) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h14a2 2 0 0 1 2 2v3h-4a2 2 0 0 0 0 4h4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5"/></symbol>
+  <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M2 18h2.5c2 0 3.3-1 4.3-2.6l4.4-6.8C14.2 7 15.5 6 17.5 6H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h2.5c1.6 0 2.8.7 3.7 1.8"/><path d="M22 18h-4.5c-1.6 0-2.8-.7-3.7-1.8"/><path d="m18 14 4 4-4 4"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M12.6 2.6 21 11a2 2 0 0 1 0 2.8L13.8 21a2 2 0 0 1-2.8 0L2.6 12.6A2 2 0 0 1 2 11.2V4a2 2 0 0 1 2-2h7.2a2 2 0 0 1 1.4.6z"/><circle cx="7.5" cy="7.5" r="1.5"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.2-2.9L3 3"/><path d="m15 9 6-6"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-cash" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></symbol>
+  <symbol id="i-boxes" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M9.7 21V10M14.3 21V10M19 21V10M2 10l10-7 10 7z"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M2 13h20"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10M12 20v-8"/><path d="M12 12c0-4-3-6-7-6 0 4 3 6 7 6z"/><path d="M12 10c0-3 2.5-5 6-5 0 3-2.5 5-6 5z"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .8-3 2s1.3 1.7 3 2 3 .8 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"/></symbol>
+  <symbol id="i-device" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+  <symbol id="i-calcheck" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/><path d="m9 15.5 2 2 4-4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+</svg>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="config-note" id="config-note" hidden>
+  <div class="wrap">Rascunho: substitua os campos entre colchetes em <code>window.LP_CONFIG</code>, no topo do arquivo, antes de publicar.</div>
+</div>
+
+<main id="conteudo">
+
+  <!-- 1. HERO -->
+  <header class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <span class="brand" aria-label="Dinheiro no Controle">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        Dinheiro no Controle
+      </span>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="pill"><span class="dot" aria-hidden="true"></span>Para autônomos com renda variável</p>
+          <h1 id="hero-title">Você fatura bem em um mês e passa aperto no outro? <span class="turn">O problema não é o dinheiro. É a falta de sistema.</span></h1>
+          <p class="hero-sub">O método em 7 passos para autônomos separarem as contas, se pagarem um salário fixo e dormirem tranquilos, mesmo com renda variável.</p>
+          <div class="cta-block">
+            <a class="btn" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <p class="btn-note">Ebook em PDF • Acesso após a confirmação do pagamento • Garantia de 7 dias</p>
+          </div>
+        </div>
+
+        <div class="mockup">
+          <div class="book-stage">
+            <div class="book" role="img" aria-label="Mockup do ebook digital Dinheiro no Controle: capa verde-escura com detalhes dourados e o subtítulo Kit de Organização Financeira para Autônomos.">
+              <div class="book-back"></div>
+              <div class="book-pages"></div>
+              <div class="book-face" aria-hidden="true">
+                <div class="cover-top"><span>Ebook • PDF</span><span class="cover-boxes"><i></i><i></i><i></i><i></i><i></i></span></div>
+                <div class="cover-title">
+                  <strong>Dinheiro<br>no <em>Controle</em></strong>
+                  <span class="cover-rule"></span>
+                  <span>Kit de Organização Financeira para Autônomos</span>
+                </div>
+                <div class="cover-foot">7 passos</div>
+              </div>
+              <div class="book-shadow"></div>
+            </div>
+          </div>
+          <p class="digital-tag"><span class="badge">PDF</span><span><strong>Produto 100% digital.</strong> Você recebe o arquivo, não um livro impresso.</span></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. IDENTIFICAÇÃO COM A DOR -->
+  <section class="section section--mist" aria-labelledby="dor-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Parece familiar?</span>
+        <h2 id="dor-title">Se você é autônomo, provavelmente já passou por isso:</h2>
+      </div>
+      <ul class="pain-grid">
+        <li class="pain-item"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-wallet"/></svg></span><p>Recebe um pagamento grande e, sem saber como, ele some antes do fim do mês</p></li>
+        <li class="pain-item"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-shuffle"/></svg></span><p>Mistura o dinheiro do trabalho com o pessoal e nunca sabe quanto realmente lucrou</p></li>
+        <li class="pain-item"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg></span><p>Leva susto quando chega a hora de pagar imposto</p></li>
+        <li class="pain-item"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></span><p>Não tem 13º nem férias pagas e nunca guarda dinheiro para isso</p></li>
+        <li class="pain-item"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span><p>Cobra “no chute” e sente que trabalha muito para ganhar pouco</p></li>
+        <li class="pain-item"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg></span><p>Fica ansioso nos meses fracos sem saber como pagar as contas</p></li>
+      </ul>
+      <div class="pain-close">
+        <p><strong>Não é falta de disciplina.</strong> Ninguém ensinou o autônomo a cuidar de uma renda que muda todo mês.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. VIRADA / SOLUÇÃO -->
+  <section class="section" aria-labelledby="solucao-title">
+    <div class="wrap solution">
+      <div class="solution-copy">
+        <span class="eyebrow">A virada</span>
+        <h2 id="solucao-title">Apresentando o <em>Dinheiro no Controle</em></h2>
+        <p>Um guia prático e direto que transforma sua renda variável em um sistema simples, com salário fixo, impostos separados e reserva para os meses difíceis. Sem planilhas complicadas e sem precisar entender de economia.</p>
+        <div class="cta-block">
+          <a class="btn" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+      <ul class="pillars" aria-label="O que o sistema traz para sua rotina">
+        <li class="pillar"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span><div><h3>Organização</h3><p>Cada conta no seu lugar: o que é do trabalho, o que é seu e o que é do imposto.</p></div></li>
+        <li class="pillar"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><div><h3>Clareza</h3><p>Você passa a saber quanto entra, quanto sai e quanto sobra de verdade.</p></div></li>
+        <li class="pillar"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span><div><h3>Previsibilidade</h3><p>Mesmo com a renda oscilando, suas contas pessoais passam a ter um valor fixo para contar.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. O QUE VOCÊ VAI APRENDER -->
+  <section class="section section--mist" aria-labelledby="passos-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">O método</span>
+        <h2 id="passos-title">7 passos para colocar seu dinheiro no controle</h2>
+      </div>
+      <ol class="steps" style="list-style:none;margin:0;padding:0">
+        <li class="step">
+          <div class="step-top"><span class="step-num"><small>Passo</small>1</span><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-split"/></svg></span></div>
+          <h3>Separe PF e PJ, mesmo sem CNPJ</h3>
+          <p>Pare de misturar o dinheiro do trabalho com o da casa e enxergue cada um com clareza.</p>
+        </li>
+        <li class="step">
+          <div class="step-top"><span class="step-num"><small>Passo</small>2</span><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span></div>
+          <h3>Descubra seu custo de vida real com o Método dos 3 Extratos</h3>
+          <p>Um jeito prático de saber quanto você realmente precisa para viver todo mês.</p>
+        </li>
+        <li class="step">
+          <div class="step-top"><span class="step-num"><small>Passo</small>3</span><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-cash"/></svg></span></div>
+          <h3>Pague-se um salário fixo todo mês (pró-labore)</h3>
+          <p>Transforme uma renda que oscila em um valor estável para suas contas pessoais.</p>
+        </li>
+        <li class="step">
+          <div class="step-top"><span class="step-num"><small>Passo</small>4</span><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-boxes"/></svg></span></div>
+          <h3>O Sistema das 5 Caixinhas para dividir cada pagamento no dia em que ele cai</h3>
+          <p>Cada valor recebido já ganha destino no mesmo dia, antes de se misturar com o resto.</p>
+        </li>
+        <li class="step">
+          <div class="step-top"><span class="step-num"><small>Passo</small>5</span><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span></div>
+          <h3>Monte a reserva de emergência certa para quem tem renda variável</h3>
+          <p>Uma reserva pensada para a realidade de quem não tem salário garantido todo mês.</p>
+        </li>
+        <li class="step">
+          <div class="step-top"><span class="step-num"><small>Passo</small>6</span><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span></div>
+          <h3>A fórmula do valor-hora para nunca mais cobrar abaixo do que vale</h3>
+          <p>Uma conta simples para definir seu preço com base no que você precisa, e não no chute.</p>
+        </li>
+        <li class="step">
+          <div class="step-top"><span class="step-num"><small>Passo</small>7</span><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-bank"/></svg></span></div>
+          <h3>Organize os impostos de MEI, Simples ou autônomo pessoa física sem susto</h3>
+          <p>Saiba o que separar no seu caso e chegue à data de pagamento com o valor já reservado.</p>
+        </li>
+      </ol>
+      <div class="extras">
+        <span class="extras-label">Também no ebook</span>
+        <p>Plano para meses fracos, estratégia para sair das dívidas e plano de ação de 30 dias.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SISTEMA DAS 5 CAIXINHAS -->
+  <section class="section" aria-labelledby="caixinhas-title">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Sistema das 5 Caixinhas</span>
+        <h2 id="caixinhas-title">Cada real que entra já tem destino.</h2>
+        <p>Quando um pagamento cai, ele não vai para um bolo único. Ele é dividido entre cinco caixinhas, e cada uma cuida de uma parte da sua vida financeira.</p>
+      </div>
+
+      <figure class="flow" aria-labelledby="flow-caption" style="margin:0">
+        <div class="flow-origin"><svg class="icon" aria-hidden="true"><use href="#i-coin"/></svg>Pagamento recebido</div>
+        <div class="flow-stem" aria-hidden="true"></div>
+        <ul class="flow-boxes" aria-label="Os cinco destinos de cada pagamento">
+          <li class="flow-box"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-bank"/></svg></span><h3>Impostos</h3><p>O que é do governo fica separado desde o primeiro dia.</p></li>
+          <li class="flow-box"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-cash"/></svg></span><h3>Pró-labore</h3><p>O seu salário fixo, pago por você mesmo.</p></li>
+          <li class="flow-box"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-briefcase"/></svg></span><h3>Custos do negócio</h3><p>O que mantém seu trabalho funcionando.</p></li>
+          <li class="flow-box"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></span><h3>Férias e 13º</h3><p>Os benefícios que ninguém paga para você, agora planejados.</p></li>
+          <li class="flow-box"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-sprout"/></svg></span><h3>Reserva e crescimento</h3><p>Fôlego para os meses fracos e para os próximos passos.</p></li>
+        </ul>
+        <figcaption id="flow-caption" class="flow-note">As caixinhas são destinos para organizar cada pagamento que você recebe. No ebook, você aprende a montar esse sistema de acordo com a sua realidade.</figcaption>
+      </figure>
+
+      <div class="cta-block cta-block--center flow-cta">
+        <a class="btn" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO TER O CONTROLE DO MEU DINHEIRO <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PARA QUEM É / NÃO É -->
+  <section class="section section--mist" aria-labelledby="perfil-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Antes de decidir</span>
+        <h2 id="perfil-title">Esse guia combina com você?</h2>
+      </div>
+      <div class="fit">
+        <div class="fit-card fit-yes">
+          <h3>É para você se:</h3>
+          <ul>
+            <li><span class="fit-mark"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>Tem renda variável</span></li>
+            <li><span class="fit-mark"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>Quer previsibilidade</span></li>
+            <li><span class="fit-mark"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>Quer parar de misturar as contas</span></li>
+            <li><span class="fit-mark"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span><span>Quer cobrar o preço justo</span></li>
+          </ul>
+        </div>
+        <div class="fit-card fit-no">
+          <h3>Não é para você se:</h3>
+          <ul>
+            <li><span class="fit-mark"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></span><span>Procura enriquecimento rápido</span></li>
+            <li><span class="fit-mark"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></span><span>Não está disposto a dedicar 30 minutos por semana às suas finanças</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. O QUE VOCÊ RECEBE -->
+  <section class="section" aria-labelledby="recebe-title">
+    <div class="wrap receive">
+      <div class="devices" role="img" aria-label="O ebook Dinheiro no Controle aberto na tela de um tablet e de um celular, mostrando que o produto é um arquivo digital em PDF.">
+        <div class="tablet" aria-hidden="true">
+          <div class="screen">
+            <div class="screen-bar"><b>dinheiro-no-controle.pdf</b><span>1 / —</span></div>
+            <div class="screen-page">
+              <div class="mini-cover"><strong>Dinheiro<br>no <em>Controle</em></strong><span>Kit de Organização Financeira para Autônomos</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone" aria-hidden="true">
+          <div class="screen">
+            <div class="screen-page">
+              <div class="mini-cover"><strong>Dinheiro<br>no <em>Controle</em></strong><span>Kit de Organização Financeira para Autônomos</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="receive-copy">
+        <div class="section-head" style="margin:0">
+          <span class="eyebrow">O que você recebe</span>
+          <h2 id="recebe-title">Um guia prático para consultar e colocar em ação</h2>
+        </div>
+        <ul class="receive-list">
+          <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span><span>Ebook “Dinheiro no Controle” em PDF</span></li>
+          <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></span><span>Acesso imediato após a confirmação do pagamento</span></li>
+          <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-device"/></svg></span><span>Leitura no celular, tablet ou computador</span></li>
+          <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-pulse"/></svg></span><span>Teste de diagnóstico financeiro incluso</span></li>
+          <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></span><span>Checklists inclusos</span></li>
+          <li><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-calcheck"/></svg></span><span>Plano de ação de 30 dias incluso</span></li>
+        </ul>
+        <div class="cta-block">
+          <a class="btn" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO COMEÇAR AGORA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. OFERTA -->
+  <section class="section section--mist" id="oferta" aria-labelledby="oferta-title">
+    <div class="wrap">
+      <div class="offer">
+        <div class="offer-top">
+          <span class="eyebrow">Sua decisão</span>
+          <h2 id="oferta-title">Quanto custa continuar sem sistema?</h2>
+          <ul class="offer-cost" aria-label="Custos da desorganização">
+            <li>Juros do cheque especial</li>
+            <li>Imposto atrasado</li>
+            <li>Meses no aperto</li>
+          </ul>
+          <p>A desorganização pode custar caro: juros do cheque especial, imposto atrasado e meses no aperto. O Dinheiro no Controle é um primeiro passo para organizar o que entra, planejar o que sai e tomar decisões com mais clareza.</p>
+        </div>
+
+        <div class="offer-product">
+          <div class="mini-cover" aria-hidden="true"><strong>Dinheiro<br>no <em>Controle</em></strong><span></span></div>
+          <div>
+            <b>Dinheiro no Controle</b>
+            <small>Ebook em PDF com teste de diagnóstico financeiro, checklists e plano de ação de 30 dias.</small>
+          </div>
+        </div>
+
+        <div class="offer-price">
+          <p class="price"><strong data-config="preco">[PREÇO]</strong> <span>à vista ou em até <span data-config="parcelas">[X]</span>x no cartão.</span></p>
+          <p class="pix"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Aceita Pix.</p>
+          <a class="btn btn--xl" data-checkout href="https://pay.kiwify.com.br/TySU2VG">QUERO COMEÇAR AGORA <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="offer-fine"><span><svg class="icon" aria-hidden="true" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px"><use href="#i-lock"/></svg>Pagamento processado pela Kiwify</span><span>Produto digital</span><span>Garantia de 7 dias</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. GARANTIA -->
+  <section class="section" aria-labelledby="garantia-title">
+    <div class="wrap">
+      <div class="guarantee">
+        <svg class="seal" viewBox="0 0 200 200" role="img" aria-label="Selo de garantia de 7 dias">
+          <defs>
+            <path id="seal-arc" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/>
+          </defs>
+          <circle cx="100" cy="100" r="96" fill="#0A3A2C"/>
+          <circle cx="100" cy="100" r="88" fill="none" stroke="#C9A24A" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="58" fill="none" stroke="#C9A24A" stroke-width="1" stroke-dasharray="2 4"/>
+          <text font-family="Figtree, Segoe UI, sans-serif" font-size="12.5" font-weight="700" letter-spacing="3.2" fill="#E7C977">
+            <textPath href="#seal-arc" startOffset="0">GARANTIA • 100% DO SEU DINHEIRO DE VOLTA •</textPath>
+          </text>
+          <text x="100" y="112" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="58" font-weight="600" fill="#FBF6E9">7</text>
+          <text x="100" y="134" text-anchor="middle" font-family="Figtree, Segoe UI, sans-serif" font-size="13" font-weight="800" letter-spacing="3" fill="#E7C977">DIAS</text>
+        </svg>
+        <div class="guarantee-copy">
+          <span class="eyebrow">Garantia</span>
+          <h2 id="garantia-title">Você tem 7 dias para decidir</h2>
+          <p>Leia o ebook e aplique o método. Se em até 7 dias você achar que não valeu a pena, devolvemos 100% do seu dinheiro, sem perguntas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section class="section section--mist" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">Dúvidas</span>
+        <h2 id="faq-title">Perguntas frequentes</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-q"><span>Como recebo o ebook?</span><span class="chev" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span></button></h3>
+          <div class="faq-a" id="faq-1" role="region" aria-labelledby="faq-1-q" hidden><p>Por e-mail, logo após a confirmação do pagamento.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-q"><span>Serve para quem não tem CNPJ?</span><span class="chev" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span></button></h3>
+          <div class="faq-a" id="faq-2" role="region" aria-labelledby="faq-2-q" hidden><p>Sim, o método funciona para MEI, empresa ou pessoa física.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-q"><span>Preciso entender de finanças?</span><span class="chev" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span></button></h3>
+          <div class="faq-a" id="faq-3" role="region" aria-labelledby="faq-3-q" hidden><p>Não. A linguagem é simples e o passo a passo é prático.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-q"><span>Serve para quem está endividado?</span><span class="chev" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span></button></h3>
+          <div class="faq-a" id="faq-4" role="region" aria-labelledby="faq-4-q" hidden><p>Sim, há um capítulo só sobre como sair das dívidas.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-q"><span>O pagamento é seguro?</span><span class="chev" aria-hidden="true"><svg class="icon"><use href="#i-chevron"/></svg></span></button></h3>
+          <div class="faq-a" id="faq-5" role="region" aria-labelledby="faq-5-q" hidden><p>Sim, processado pela Kiwify.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. CHAMADA FINAL -->
+  <section class="section final" aria-labelledby="final-title">
+    <div class="wrap">
+      <div class="final-inner">
+        <span class="boxes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <h2 id="final-title">Daqui a 30 dias, você pode continuar no aperto ou <em>ter seu dinheiro no controle.</em></h2>
+        <a class="btn btn--gold btn--xl" data-checkout href="https://pay.kiwify.com.br/TySU2VG">SIM, QUERO MEU DINHEIRO NO CONTROLE <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 12. RODAPÉ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div>
+        <span class="brand">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          Dinheiro no Controle
+        </span>
+        <p>Conteúdo educativo. Não substitui a orientação de um contador ou consultor financeiro.</p>
+      </div>
+      <nav aria-label="Documentos legais">
+        <ul>
+          <li><a data-config-href="politica" href="[LINK DA POLÍTICA DE PRIVACIDADE]">Política de privacidade</a></li>
+          <li><a data-config-href="termos" href="[LINK DOS TERMOS DE USO]">Termos de uso</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-copy">Dinheiro no Controle: Kit de Organização Financeira para Autônomos</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var cfg = window.LP_CONFIG || {};
+  var isPlaceholder = function (v) { return !v || /^\s*\[.*\]\s*$/.test(v); };
+
+  // Links de compra
+  document.querySelectorAll("[data-checkout]").forEach(function (a) {
+    a.setAttribute("href", cfg.checkout);
+  });
+  // Links jurídicos (ficam ocultos até receberem um link real)
+  document.querySelectorAll("[data-config-href]").forEach(function (a) {
+    var v = cfg[a.getAttribute("data-config-href")];
+    if (isPlaceholder(v)) a.closest("li").hidden = true;
+    else a.setAttribute("href", v);
+  });
+  // Preço e parcelas
+  document.querySelectorAll("[data-config]").forEach(function (el) {
+    var v = cfg[el.getAttribute("data-config")];
+    if (v) el.textContent = v;
+  });
+  // Aviso discreto enquanto houver campos sem preencher
+  var pending = ["checkout", "preco", "parcelas"].some(function (k) { return isPlaceholder(cfg[k]); });
+  if (pending) document.getElementById("config-note").hidden = false;
+
+  // FAQ em acordeão
+  document.querySelectorAll(".faq-q").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") === "true";
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      btn.setAttribute("aria-expanded", String(!open));
+      panel.hidden = open;
+      btn.closest(".faq-item").classList.toggle("is-open", !open);
+    });
+  });
+})();
+</script>
+</body>
+</html>
